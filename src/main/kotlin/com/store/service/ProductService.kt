@@ -22,6 +22,9 @@ class ProductService {
         if (productDetails.inventory < 0) {
             return "Inventory cannot be negative"
         }
+        if (productDetails.cost == null || productDetails.cost <= 0) {
+            return "Cost should be greater than 0"
+        }
         return null
     }
 

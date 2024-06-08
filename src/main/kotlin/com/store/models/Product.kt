@@ -7,7 +7,8 @@ data class Product(
     @JsonProperty("id") @NonNull val id: Int,
     @JsonProperty("type") @NonNull val type: ProductType,
     @JsonProperty("name") @NonNull val name: String,
-    @JsonProperty("inventory") @NonNull val inventory: Int
+    @JsonProperty("inventory") @NonNull val inventory: Int,
+    @JsonProperty("cost") val cost: Int
 )
 
 enum class ProductType {
@@ -17,7 +18,8 @@ enum class ProductType {
 data class ProductDetails(
     @JsonProperty("name") val name: String,
     @JsonProperty("type") val type: ProductType,
-    @JsonProperty("inventory") val inventory: Int?
+    @JsonProperty("inventory") val inventory: Int?,
+    @JsonProperty("cost") val cost: Int?
 )
 
 data class ProductId(

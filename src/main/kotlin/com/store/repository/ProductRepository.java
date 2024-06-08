@@ -11,10 +11,10 @@ public class ProductRepository {
     private int currentId = 1;
 
     public ProductRepository() {
-        ProductDetails product1 = new ProductDetails("Book 1",ProductType.book,  10);
-        ProductDetails product2 = new ProductDetails( "Food 1", ProductType.food,20);
-        ProductDetails product3 = new ProductDetails( "Gadget 1", ProductType.gadget,30);
-        ProductDetails product4 = new ProductDetails( "Other 1", ProductType.other,40);
+        ProductDetails product1 = new ProductDetails("Book 1",ProductType.book,  10,10);
+        ProductDetails product2 = new ProductDetails( "Food 1", ProductType.food,20,10);
+        ProductDetails product3 = new ProductDetails( "Gadget 1", ProductType.gadget,30,10);
+        ProductDetails product4 = new ProductDetails( "Other 1", ProductType.other,40,10);
 
         add(product1);
         add(product2);
@@ -24,7 +24,10 @@ public class ProductRepository {
 
     public int add(ProductDetails productDetails) {
         currentId++;
-        Product newProduct = new Product(currentId, productDetails.getType(), productDetails.getName(), productDetails.getInventory());
+        Product newProduct = new Product(currentId, productDetails.getType(),
+                productDetails.getName(),
+                productDetails.getInventory(),
+                productDetails.getCost());
         products.add(newProduct);
         return currentId;
     }
